@@ -134,9 +134,7 @@ void NNParamHandler::setImageManip(const std::string& model_path, std::shared_pt
 std::string NNParamHandler::getModelPath(const nlohmann::json& data) {
     std::string modelPath;
     auto source = data["model"]["zoo"].get<std::string>();
-    if(source == "depthai_examples") {
-        modelPath = ament_index_cpp::get_package_share_directory("depthai_examples") + "/resources/" + data["model"]["model_name"].get<std::string>() + ".blob";
-    } else if(source == "path") {
+    if(source == "path") {
         modelPath = data["model"]["model_name"].get<std::string>();
     } else {
         throw std::runtime_error("Other options not yet available");
