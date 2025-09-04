@@ -42,7 +42,6 @@ jobs:
         arguments: --config ./.clang-format
         package-name: |
           depthai_bridge
-          depthai_examples
           depthai_ros_msgs
           depthai_ros
   linting:
@@ -63,7 +62,6 @@ jobs:
         linter: ${{ matrix.linter }}
         package-name: |
           depthai_bridge
-          depthai_examples
           depthai_ros_msgs
           depthai_ros
 
